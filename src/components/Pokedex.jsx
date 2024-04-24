@@ -24,7 +24,7 @@ const Pokedex = () => {
       } catch (error) {
         Swal.fire("Error", "No se pudo conectar al API", "error");
         console.error(error);
-      }
+      };
     };
 
     leerPokemons();
@@ -36,9 +36,9 @@ const Pokedex = () => {
 
   return (
     <section className="col-sm-12 col-lg-8 d-flex justify-content-center flex-wrap z-1 mt-5">
-      {listaPokemons.map((pokemon, index) => {
+      {listaPokemons.map((pokemon, index) => (
         <PokemonCard key={index} pokemon={pokemon} onSelect={handlePokemonSelect}/>
-      })}
+      ))}
       <DatosPokemon pokemon={selectedPokemon}/>
     </section>
   );
